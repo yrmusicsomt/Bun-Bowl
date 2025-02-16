@@ -176,12 +176,12 @@ const Home = () => {
         />
         <div className="container mx-auto px-4 h-full flex items-center relative z-10">
           <div className="text-white max-w-2xl animate-fadeIn">
-            <h1 className="font-['Rokkitt'] text-7xl font-bold mb-6 leading-tight">
+            <h1 className="font-['Rokkitt'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               WELCOME TO
               <br />
               BUN & BOWL!
             </h1>
-            <p className="font-['Outfit'] text-xl mb-8 leading-relaxed">
+            <p className="font-['Outfit'] text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed">
               Born out of a love for authentic Vietnamese flavors and a passion for creating 
               something uniquely modern, Bun & Bowl brings you the perfect fusion of East and 
               West, right in the heart of the community.
@@ -190,7 +190,7 @@ const Home = () => {
               href="https://www.ubereats.com/store/bun-%26-bowl/PZbzukCGRkCgymQc-uWcvg?utm_source=menu-maker"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-gray-800 px-8 py-4 rounded-full font-['Outfit'] font-medium hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-['Outfit'] text-sm sm:text-base font-medium hover:bg-gray-100 transition-colors"
             >
               Order Now
             </a>
@@ -202,11 +202,11 @@ const Home = () => {
 
       {/* Highlights Section */}
       <section className="py-16 bg-[#FDF6F1]">
-        <div className="container mx-auto px-16 max-w-7xl">
-          <h2 className="font-['Rokkitt'] text-4xl font-bold mb-12">
+        <div className="container mx-auto px-4 md:px-16 max-w-7xl">
+          <h2 className="font-['Rokkitt'] text-3xl md:text-4xl font-bold mb-8 md:mb-12">
             <span className="text-[#5D6E5C]">Highlights</span> of Bun & Bowl
           </h2>
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <div className="bg-white rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
               <img 
                 src="/PHO – Noodlebar (1).jpeg"
@@ -284,17 +284,17 @@ const Home = () => {
 
       {/* Menu Section */}
       <section id="menu-section" className="py-16 bg-[#F2E2D1]">
-        <div className="container mx-auto px-16 max-w-7xl">
-          <h2 className="font-['Rokkitt'] text-4xl font-bold">
+        <div className="container mx-auto px-4 md:px-16 max-w-7xl">
+          <h2 className="font-['Rokkitt'] text-3xl md:text-4xl font-bold mb-4 md:mb-6">
             Explore Our Delicious <span className="text-[#5D6E5C]">Menu Selections</span>
           </h2>
-          <p className="font-['Outfit'] text-gray-600 mt-2 mb-8">
+          <p className="font-['Outfit'] text-gray-600 text-sm md:text-base mt-2 mb-8">
             Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate 
             your dining experience, one delicious meal at a time.
           </p>
 
           {/* Menu Categories */}
-          <div className="flex justify-center gap-16 mb-12">
+          <div className="grid grid-cols-4 gap-4 md:flex md:justify-center md:gap-16 mb-8 md:mb-12">
             {menuCategories.map((category, index) => (
               <div 
                 key={index} 
@@ -304,18 +304,18 @@ const Home = () => {
                 <img 
                   src={category.icon} 
                   alt={category.name} 
-                  className="w-16 h-16 mx-auto mb-2 rounded-full object-cover"
+                  className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-2 rounded-full object-cover"
                 />
-                <span className="font-['Outfit'] text-sm">{category.name}</span>
+                <span className="font-['Outfit'] text-xs md:text-sm">{category.name}</span>
               </div>
             ))}
           </div>
 
           {/* Menu Items */}
           {Object.entries(menuItems).map(([category, items]) => (
-            <div key={category} id={`${category}-section`} className="mb-16">
-              <h3 className="font-['Outfit'] text-2xl font-bold mb-8 capitalize">{category}</h3>
-              <div className="grid grid-cols-3 gap-6">
+            <div key={category} id={`${category}-section`} className="mb-12 md:mb-16">
+              <h3 className="font-['Outfit'] text-xl md:text-2xl font-bold mb-6 md:mb-8 capitalize">{category}</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {items.map((item, index) => (
                   <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
                     <div className="relative">
@@ -331,6 +331,9 @@ const Home = () => {
                     <div className="p-4">
                       <div className="flex text-yellow-400 mb-2">★★★★★</div>
                       <h4 className="font-['Outfit'] text-lg font-bold mb-2">{item.name}</h4>
+                      {item.description && (
+                        <p className="font-['Outfit'] text-gray-600 text-sm mb-2">{item.description}</p>
+                      )}
                       <div className="flex items-center">
                         <span className="text-yellow-400 font-bold">$</span>
                         <span className="font-['Outfit'] text-lg font-bold">{item.price.toFixed(2)}</span>
