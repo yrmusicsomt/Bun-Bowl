@@ -170,10 +170,11 @@ const Home = () => {
       {/* Hero Section */}
       <section id="hero-section" className="relative h-[600px] bg-orange-500">
         <img 
-          src="/header_img.png"
+          src="/hi_pho.png"
           alt="Featured salmon dish with broccoli" 
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
+        <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="container mx-auto px-4 h-full flex items-center relative z-10">
           <div className="text-white max-w-2xl animate-fadeIn">
             <h1 className="font-['Rokkitt'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
@@ -245,14 +246,12 @@ const Home = () => {
                 <h3 className="font-['Outfit'] text-lg font-bold mb-2">Catering for Every Occasion</h3>
                 <p className="font-['Outfit'] text-gray-600 text-sm">
                   From corporate events to private gatherings, our catering services bring the flavors of Bun & Bowl to you.{' '}
-                  <a 
-                    href="https://www.ubereats.com/store/bun-%26-bowl/PZbzukCGRkCgymQc-uWcvg?utm_source=menu-maker"
+                  <Link 
+                    to="/catering"
                     className="text-gray-600 underline hover:opacity-80"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     Request catering orders now!
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -286,7 +285,8 @@ const Home = () => {
       <section id="menu-section" className="py-16 bg-[#F2E2D1]">
         <div className="container mx-auto px-4 md:px-16 max-w-7xl">
           <h2 className="font-['Rokkitt'] text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-            Explore Our Delicious <span className="text-[#5D6E5C]">Menu Selections</span>
+            <span className="text-[#5D6E5C]">Explore Our Delicious</span>{' '}
+            Menu Selections
           </h2>
           <p className="font-['Outfit'] text-gray-600 text-sm md:text-base mt-2 mb-8">
             Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate 
@@ -324,9 +324,6 @@ const Home = () => {
                         alt={item.name}
                         className="w-full h-48 object-cover"
                       />
-                      <button className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center text-xl font-light">
-                        +
-                      </button>
                     </div>
                     <div className="p-4">
                       <div className="flex text-yellow-400 mb-2">★★★★★</div>
