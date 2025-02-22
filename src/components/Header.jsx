@@ -89,9 +89,12 @@ const Header = () => {
             <Link to="/catering" className="text-[#F7F0D6] hover:text-[#F7F0D6]/80">
               catering
             </Link>
-            <button onClick={scrollToFooter} className="text-[#F7F0D6] hover:text-[#F7F0D6]/80">
+            <Link 
+              to="/contact" 
+              className="text-[#F7F0D6] hover:text-[#F7F0D6]/80"
+            >
               contact us
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -140,15 +143,16 @@ const Header = () => {
             >
               catering
             </Link>
-            <button 
+            <Link 
+              to="/contact" 
+              className="text-[#F7F0D6] hover:text-[#F7F0D6]/80 py-2 text-left text-xl"
               onClick={() => {
                 scrollToFooter();
                 setIsMenuOpen(false);
-              }} 
-              className="text-[#F7F0D6] hover:text-[#F7F0D6]/80 py-2 text-left text-xl"
+              }}
             >
               contact us
-            </button>
+            </Link>
           </div>
         </div>
       </nav>

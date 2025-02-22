@@ -13,13 +13,6 @@ const Footer = () => {
     }
   }, [location]);
 
-  const scrollToFooter = () => {
-    const footer = document.getElementById('footer');
-    if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer id="footer" className="bg-[#1B3735] text-white py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-16 max-w-7xl">
@@ -72,12 +65,12 @@ const Footer = () => {
               </li>
               <li><Link to="/catering" className="hover:opacity-80">Catering</Link></li>
               <li>
-                <button 
-                  onClick={scrollToFooter}
+                <Link 
+                  to="/contact" 
                   className="hover:opacity-80"
                 >
                   Contact Us
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
